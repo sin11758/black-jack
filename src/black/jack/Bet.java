@@ -1,16 +1,20 @@
 package black.jack;
-
+/**
+ *
+ * @author Navjot Singh
+ * @author Gurminder Singh
+ * @author Harman Sandhu
+ */
 public class Bet {
 
 	private int bet;
 
 	/**
-	 * 
+	 *
 	 * @param bet
 	 */
 	public Bet(int bet) {
-		// TODO - implement Bet.Bet
-		throw new UnsupportedOperationException();
+		this.bet = bet;
 	}
 
 	public int getBet() {
@@ -18,16 +22,13 @@ public class Bet {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param bet
 	 */
 	public void setBet(int bet) {
 		this.bet = bet;
 	}
 
-	public void winingPoints() {
-		// TODO - implement Bet.winingPoints
-		throw new UnsupportedOperationException();
-	}
+
 
 }

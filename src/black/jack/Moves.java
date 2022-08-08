@@ -1,44 +1,53 @@
 package black.jack;
-
+/**
+ *
+ * @author Navjot Singh
+ * @author Gurminder Singh
+ * @author Harman Sandhu
+ */
 public class Moves {
 
-	private Moves move;
+	private Move move;
+	private int dealer;
+	private Player[] players;
+	private int i;
 
-	/**
-	 * 
-	 * @param move
-	 * @param player
-	 */
-	public void Move(Moves move) {
-		// TODO - implement Moves.Move
-		throw new UnsupportedOperationException();
+	        /**
+	         *
+	         * @param players
+	         * @param dealer
+	         * @param i
+	         */
+
+	public Moves(Player[] players,int dealer,int i) {
+		this.players = players;
+		this.dealer = dealer;
+		this.i = i;
 	}
 
-	public Moves getMove() {
-		return this.move;
+	public String getMove() {
+		return this.move.getMove();
 	}
 
 	/**
-	 * 
+	 *
 	 * @param move
 	 */
-	public void setMove(Moves move) {
+	public void setMove(Move move) {
 		this.move = move;
 	}
 
-	public void playHit() {
-		// TODO - implement Moves.playHit
-		throw new UnsupportedOperationException();
+	public void play() {
+		if (move == Move.HIT) {
+			(players[dealer]).giveOneCard();
+		} else if (move == Move.STAY){
+			players[i].getBust().setIsStay(true);
+		}else if(move == Move.SURRENDER){
+			players[i].getBust().setIsBust(true);
+		}
 	}
-
-	public void platStay() {
-		// TODO - implement Moves.platStay
-		throw new UnsupportedOperationException();
-	}
-
-	public void playDistribute() {
-		// TODO - implement Moves.playDistribute
-		throw new UnsupportedOperationException();
+	public void showMoves() {
+		System.out.println("\n"+players[i].getName()+" play a Move from: \n\t\t" +Move.HIT + "\n\t\t" +Move.STAY +"\n\t\t"+Move.SURRENDER);
 	}
 
 }

@@ -3,20 +3,21 @@ package black.jack;
 public class Bettor extends Player {
 
 	/**
-	 * 
-	 * @param name
-	 * @param hand
-	 * @param bet
-	 * @param points
+	 *
+	 * @author Navjot Singh
+	 * @author Gurminder Singh
+	 * @author Harman Sandhu
 	 */
-	public Bettor(String name, Hand hand, Bet bet, Points points) {
-		// TODO - implement Bettor.Bettor
-		throw new UnsupportedOperationException();
+
+	      /**
+	     * @param name
+	     * @param points
+	     * @param bust
+     */
+	public Bettor(String name, Points points,Status bust) {
+		super(name,points,bust,false);
 	}
 
-	public void showCards() {
-		// TODO - implement Bettor.showCards
-		throw new UnsupportedOperationException();
-	}
+
 
 }

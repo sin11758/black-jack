@@ -1,24 +1,34 @@
 package black.jack;
-
+/**
+ *
+ * @author Navjot Singh
+ * @author Gurminder Singh
+ * @author Harman Sandhu
+ */
 public class Player {
 
-	private String name;
-	private Hand hand;
+	protected String name;
+	protected Hand hand;
 	private Bet bet;
 	private Points points;
 	private Moves moves;
-	private Bust bust;
+	private Status bust;
+	private boolean isDealer;
+
 
 	/**
-	 * 
+	 *
 	 * @param name
-	 * @param hand
-	 * @param bet
-	 * @param points
+         * @param points
+         * @param bust
+         * @param isDealer
 	 */
-	public Player(String name, Hand hand, Bet bet, Points points) {
-		// TODO - implement Player.Player
-		throw new UnsupportedOperationException();
+	public Player(String name,Points points,Status bust,boolean isDealer) {
+		this.name = name;
+		this.points = points;
+		this.isDealer = isDealer;
+		this.bust = bust;
+
 	}
 
 	public String getName() {
@@ -26,23 +36,20 @@ public class Player {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param name
 	 */
 	public void setName(String name) {
 		this.name = name;
 	}
 
-	public Hand getHand() {
-		return this.hand;
-	}
 
 	public Bet getBet() {
 		return this.bet;
 	}
 
 	/**
-	 * 
+	 *
 	 * @param bet
 	 */
 	public void setBet(Bet bet) {
@@ -52,9 +59,16 @@ public class Player {
 	public Points getPoints() {
 		return this.points;
 	}
+	/**
+	 *
+	 * @param points
+	 */
+	public void setPoints(Points points) {
+		this.points = points;
+	}
 
 	/**
-	 * 
+	 *
 	 * @param name
 	 * @param hand
 	 */
@@ -67,73 +81,7 @@ public class Player {
 	}
 
 	/**
-	 * 
-	 * @param hand
-	 */
-	public void setHand(Hand hand) {
-		this.hand = hand;
-	}
-
-	public boolean getIsBust() {
-		return this.isBust;
-	}
-
-	/**
-	 * 
-	 * @param isBust
-	 */
-	public void setIsBust(boolean isBust) {
-		this.isBust = isBust;
-	}
-
-	/**
-	 * 
-	 * @param name
-	 * @param hand
-	 */
-	public Player(String name, Hand hand) {
-		// TODO - implement Player.Player
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * 
-	 * @param hand
-	 */
-	public void setHand(Hand hand) {
-		this.hand = hand;
-	}
-
-	/**
-	 * 
-	 * @param name
-	 * @param hand
-	 */
-	public Player(String name, Hand hand) {
-		// TODO - implement Player.Player
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * 
-	 * @param hand
-	 */
-	public void setHand(Hand hand) {
-		this.hand = hand;
-	}
-
-	/**
-	 * 
-	 * @param name
-	 * @param hand
-	 */
-	public Player(String name, Hand hand) {
-		// TODO - implement Player.Player
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * 
+	 *
 	 * @param hand
 	 */
 	public void setHand(Hand hand) {
@@ -145,7 +93,7 @@ public class Player {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param moves
 	 */
 	public void setMoves(Moves moves) {
@@ -153,100 +101,39 @@ public class Player {
 	}
 
 	/**
-	 * 
-	 * @param name
-	 * @param hand
+	 *
+	 * @param bust
 	 */
-	public Player(String name, Hand hand) {
-		// TODO - implement Player.Player
-		throw new UnsupportedOperationException();
-	}
 
+	public void setBust(Status bust) {
+		this.bust = bust;
+	}
+	public Status getBust() {
+		return bust;
+	}
 	/**
-	 * 
-	 * @param hand
+	 *
+	 * @param isDealer
 	 */
-	public void setHand(Hand hand) {
-		this.hand = hand;
+	public void setIsDealer(boolean isDealer) {
+		this.isDealer = isDealer;
 	}
-
-	/**
-	 * 
-	 * @param name
-	 * @param hand
-	 */
-	public Player(String name, Hand hand) {
-		// TODO - implement Player.Player
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * 
-	 * @param hand
-	 */
-	public void setHand(Hand hand) {
-		this.hand = hand;
-	}
-
-	/**
-	 * 
-	 * @param name
-	 * @param hand
-	 */
-	public Player(String name, Hand hand) {
-		// TODO - implement Player.Player
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * 
-	 * @param hand
-	 */
-	public void setHand(Hand hand) {
-		this.hand = hand;
-	}
-
-	public Points getPoints() {
-		return this.points;
-	}
-
-	/**
-	 * 
-	 * @param points
-	 */
-	public void setPoints(Points points) {
-		this.points = points;
-	}
-
-	/**
-	 * 
-	 * @param name
-	 * @param hand
-	 */
-	public Player(String name, Hand hand) {
-		// TODO - implement Player.Player
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * 
-	 * @param hand
-	 */
-	public void setHand(Hand hand) {
-		this.hand = hand;
-	}
-
-	/**
-	 * 
-	 * @param points
-	 */
-	public void setPoints(Points points) {
-		this.points = points;
+	public boolean getIsDealer() {
+		return isDealer;
 	}
 
 	public void showCards() {
-		// TODO - implement Player.showCards
-		throw new UnsupportedOperationException();
+		hand.getCards();
 	}
+	public void giveOneCard(){
+
+}
+	/**
+	 *
+	 * @param turn
+	 */
+public void setTurn(int turn) {
+
+}
 
 }

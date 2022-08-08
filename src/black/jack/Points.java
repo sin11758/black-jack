@@ -1,12 +1,19 @@
 package black.jack;
-
+/**
+ *
+ * @author Navjot Singh
+ * @author Gurminder Singh
+ * @author Harman Sandhu
+ */
 public class Points {
 
 	private int points;
-
-	public Points() {
-		// TODO - implement Points.Points
-		throw new UnsupportedOperationException();
+	/**
+	 *
+	 * @param points
+	 */
+	public Points(int points) {
+		this.points = points;
 	}
 
 	public int getPoints() {
@@ -14,16 +21,25 @@ public class Points {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param points
 	 */
 	public void setPoints(int points) {
 		this.points = points;
 	}
-
-	public void addPoints() {
-		// TODO - implement Points.addPoints
-		throw new UnsupportedOperationException();
+	/**
+	 *
+	 * @param times
+	 */
+	public void addPoints(int times) {
+		this.points += times*10;
+	}
+	/**
+	 *
+	 * @param points
+	 */
+	public void minusPoints(int points) {
+		this.points += points;
 	}
 
 }

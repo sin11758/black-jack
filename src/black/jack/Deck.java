@@ -1,45 +1,39 @@
 package black.jack;
+/**
+ *
+ * @author Navjot Singh
+ * @author Gurminder Singh
+ * @author Harman Sandhu
+ */
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class Deck {
-	private int cardNumber;
-	private Card card;
+	private List<Card> cards = new ArrayList<Card>();
+
+	public Deck() {
+		for (int i = 0; i < 13; i++) {
+			for (int j = 0; j < 4; j++) {
+				this.cards.add(new Card(Number.values()[i], Suit.values()[j], true));
+			}
+		}
+	}
+
+	public List<Card> getCards() {
+		return this.cards;
+	}
 
 	/**
-	 * 
+	 *
 	 * @param cards
 	 */
-	public Deck(Card[] cards) {
-		// TODO - implement Deck.Deck
-		throw new UnsupportedOperationException();
-	}
-
-	public int getCardNumber() {
-		return this.cardNumber;
-	}
-
-	/**
-	 * 
-	 * @param cardNumber
-	 */
-	public void setCardNumber(int cardNumber) {
-		this.cardNumber = cardNumber;
-	}
-
-	public Card getCard() {
-		return this.card;
-	}
-
-	/**
-	 * 
-	 * @param card
-	 */
-	public void setCard(Card card) {
-		this.card = card;
+	public void setCard(Card cards) {
+		this.cards.add(cards);
 	}
 
 	public void suffelDeck() {
-		// TODO - implement Deck.suffelDeck
-		throw new UnsupportedOperationException();
+		Collections.shuffle(cards);
 	}
 
 }

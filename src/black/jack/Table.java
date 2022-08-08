@@ -1,20 +1,25 @@
 package black.jack;
-
+/**
+ *
+ * @author Navjot Singh
+ * @author Gurminder Singh
+ * @author Harman Sandhu
+ */
 public class Table {
 
 	private int numberOfPlayers;
 	private Player[] player;
 	private Positions positions;
 
+
 	/**
-	 * 
+	 *
 	 * @param numberOfPlayers
 	 * @param players
-	 * @param deck
 	 */
-	public Table(int numberOfPlayers, Player[] players) {
-		// TODO - implement Table.Table
-		throw new UnsupportedOperationException();
+	public Table(int numberOfPlayers, Player[] player) {
+		this.numberOfPlayers = numberOfPlayers;
+		this.player = player;
 	}
 
 	public int getNumberOfPlayers() {
@@ -22,7 +27,7 @@ public class Table {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param numberOfPlayers
 	 */
 	public void setNumberOfPlayers(int numberOfPlayers) {
@@ -34,7 +39,7 @@ public class Table {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param player
 	 */
 	public void setPlayer(Player[] player) {
@@ -46,7 +51,7 @@ public class Table {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param positions
 	 */
 	public void setPositions(Positions positions) {
@@ -54,8 +59,42 @@ public class Table {
 	}
 
 	public void showTable() {
-		// TODO - implement Table.showTable
-		throw new UnsupportedOperationException();
+		for (int i = 0; i < player.length; i++) {
+			System.out.println("\nPlayer"+(i + 1));
+			System.out.println("\tName: "+ player[i].name);
+			System.out.println("\tPoints: "+ player[i].getPoints().getPoints());
+			if (player[i].getBet() == null && player[i].getIsDealer() != true ) {
+				System.out.println("\tBet: 0");
+			}else if(player[i].getIsDealer() != true) {
+				System.out.println("\tBet: "+ player[i].getBet().getBet());
+
+			}
+			System.out.println("\tCards in hand: " );
+			if (player[i].getHand() == null) {
+				System.out.println("\t\tEmpty");
+			}else{
+				player[i].getHand().getCards();
+			}
+
+			if (player[i].getHand() == null) {
+				System.out.println("\tSum = 0");
+			}else{
+				System.out.print("\t\tSum = ");
+				player[i].getHand().sumOfCards();
+			}
+			if (player[i].getHand()!= null && player[i].getBust()!= null ) {
+			System.out.print("\tIs Bust: " );
+				if (player[i].getBust().getIsBust() == true) {
+					System.out.println("Yes");
+				}else{
+					System.out.print("No");
+				}
+
+			}
+
+		}
 	}
+
+
 
 }
